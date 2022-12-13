@@ -43,4 +43,8 @@ class LinkedList {
     this.length += 1;
     return newNode;
   }
+
+  size() {
+    return this.length;
+  }
 }
