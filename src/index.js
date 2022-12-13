@@ -13,14 +13,34 @@ class LinkedList {
   }
 
   append(value) {
+    // create node
     const newNode = new Node(value);
 
+    // check if has zero element
     if (this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      this.tail.next = newNode; // add after tail
-      this.tail = newNode; // update linkedlist tail
+      this.tail.next = newNode; // add node after tail
+      this.tail = newNode; // update current linkedlist tail
     }
+    this.lengt += 1;
+    return newNode;
+  }
+
+  prepend(value) {
+    // create note
+    const newNode = new Node(value);
+
+    // check if has zero element
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head; // update new node's next
+      this.head = newNode; // update current linkedlist head
+    }
+    this.length += 1;
+    return newNode;
   }
 }
