@@ -1,16 +1,8 @@
 class Node {
-  constructor(value) {
-    this.value = value || null;
-    this.nextNode = null;
-  }
-
-  changeValue(newValue) {
-    this.value = newValue;
+  constructor(value = null, nextNode = null) {
+    this.value = value;
+    this.nextNode = nextNode;
   }
 }
 
-class LinkedList {
-  append(value) {}
-
-  prepend(value) {}
-}
+class LinkedList {}
