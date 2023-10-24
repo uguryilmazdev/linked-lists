@@ -23,7 +23,7 @@ class LinkedList {
       this.tail = newNode;
     } else {
       this.tail.next = newNode; // add this node after tail
-      this.tail = newNode; // update current tail 
+      this.tail = newNode; // update current tail
     }
     this.size++;
     return newNode;
@@ -47,10 +47,7 @@ class LinkedList {
   }
 
   // Add value at spesific index
-  addIndex(value, index) {
-    // create a new node
-    const newNode = this.createNode(value);
-
+  addValue(value, index) {
     // index must not exceed the size
     if (index >= this.size) {
       throw new Error("Index is out of bounds")
@@ -58,6 +55,9 @@ class LinkedList {
 
     // if index = 0, just add a new head
     if (index === 0) return this.addHead(value);
+
+    // create a new node
+    const newNode = this.createNode(value);
 
     // if a valid index
     let previousNode = null;
@@ -70,7 +70,7 @@ class LinkedList {
     }
 
     newNode.next = currentNode;  // insert newNode  before current one
-    previousNode.next = newNode; // reassign previous node's next 
+    previousNode.next = newNode; // reassign previous node's next
 
     this.size++;
 
@@ -103,7 +103,7 @@ class LinkedList {
 
   // Remove head
   removeHead() {
-    // if there is a head
+
     if (this.head) {
       const oldHead = this.head;
       this.head = this.head.next;
@@ -161,7 +161,7 @@ linked.addTail("node2");
 linked.addTail("node4");
 linked.printLength();
 linked.print();
-linked.addIndex("node3",2);
+linked.addValue("node3",2);
 linked.addTail("node5");
 linked.addHead("node0");
 linked.printLength();
@@ -172,7 +172,7 @@ linked.print();
 linked.removeHead();
 linked.printLength();
 linked.print();
-linked.addIndex("nodeExtra",2);
+linked.addValue("nodeExtra",2);
 linked.printLength();
 linked.print();
 linked.removeIndex(3);
